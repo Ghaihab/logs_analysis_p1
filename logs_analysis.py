@@ -1,3 +1,4 @@
+#! /usr/bin/env python2.7
 import psycopg2
 
 
@@ -38,8 +39,8 @@ def popular_authors():
                  SELECT substr(path,10) AS slugInLog, count(*)
                  AS number_of_access
                  FROM log
-                 WHERE path LIKE '%/article/%' GROUP BY path)
-                 AS hits, articles, authors
+                 WHERE path LIKE '%/article/%' GROUP BY path
+                 ) AS hits, articles, authors
                  WHERE slugInLog = slug AND author = authors.id
                  ORDER BY number_of_access DESC
                  ) AS table_alis GROUP BY name ORDER BY views DESC;
