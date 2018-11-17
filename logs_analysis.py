@@ -1,14 +1,20 @@
-#! /usr/bin/env python2.7
+#!/usr/bin/env python
 import psycopg2
 
 
 def get_query_results(query):
-    db = psycopg2.connect(database='news')
-    cursor = db.cursor()
-    cursor.execute(query)
-    result = cursor.fetchall()
-    db.close()
-    return result
+    try:
+        db = psycopg2.connect(database='news')
+    except psycopg2.Error as e:
+        print("Unable to connect!")
+        print(e)
+        exit(1)
+    else:
+        cursor = db.cursor()
+        cursor.execute(query)
+        result = cursor.fetchall()
+        db.close()
+        return result
 
 
 def popular_articles():
