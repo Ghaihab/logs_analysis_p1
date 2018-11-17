@@ -24,3 +24,34 @@ A large database with over a million rows is explored by building complex SQL qu
 4. import the downloaded data to the database run `psql -d news -f newsdata.sql` to connect to and run the project database.
 5. To execute the program in this repo, run `python logs_analysis.py`.
 6. After running the program a message will be shown in the terminal (finished, file has been wrote with name: output.txt) a file has been genenrated.
+
+
+## Result
+
+Check the output.txt it will be generated after the program execution.
+
+### Query 1: Most popular three articles
+
+| Articles  | Views 
+| :------------ |:---------------:
+| Candidate is jerk, alleges rival     | 338647 views 
+| Bears love berries, alleges bear     | 253801 views     
+|  Bad things gone, say good people | 170098 views
+
+### Query 2: Most popular authors
+
+| Authors  | Views 
+| :------------ |:---------------:
+| Ursula La Multa     | 507594 views 
+| Rudolf von Treppenwitz     | 423457 views     
+|  Anonymous Contributor | 170098 views
+|  Markoff Chaney | 84557 views
+
+### Query 3: Days on which > 1% HTTP requests returned 404 errors
+
+| Day  | Percentage  
+| :------------ |:---------------:
+| July 17, 2016     | 2.25% errors 
+
+
+       
